@@ -1,0 +1,130 @@
+   body { margin: 0; padding: 0; font-family: "Space Grotesk", sans-serif; }
+    .display-5 {font-size:4em !important;}
+    .text-primary {color:#0c1e52 !important;}
+    .bg-primary {background-color:#0c1e52 !important;}
+    .text-warning {color:#ffd700 !important;}
+    .bg-warning, .btn-warning {background-color:#ffd700 !important;}
+    .navbar {
+      background-color: #0c1e52 !important;
+    }
+    .navbar-brand img { height: 40px; }
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      margin: 0 10px;
+    }
+    .nav-link:hover, .dropdown-item:hover { color: #ffd700 !important; }
+    .dropdown-menu {
+      background-color: #0c1e52;
+    }
+    .dropdown-item { color: #fff !important; }
+    .btn-get-money {
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 6px 15px;
+      margin-right: 15px;
+      font-size: 14px;
+    }
+    .btn-get-money:hover {
+      background-color: #ffd700;
+      color: #000;
+    }
+    .user-icon {
+      width: 30px; height: 30px;
+      border: 1px solid #fff; border-radius: 50%;
+      background: url('https://cdn-icons-png.flaticon.com/512/847/847969.png') no-repeat center/cover;
+    }
+    .hero {
+      background-color: #0c1e52;
+      background-image: url(../img/banner.jpg);
+      background-size:cover;
+      background-attachment: fixed;
+
+      color: #fff;
+      padding: 60px 0;
+    }
+    .hero h1 span {
+      color: #ffd700;
+    }
+    .form-box {
+        border: 1px #9f7676 solid;
+        background: #160000;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-control, .form-select {
+      border-radius: 5px;
+      background: #f1f1f1;
+      border: none;
+    }
+    .btn-consult {
+      background-color: #ffd700;
+      border: none;
+      color: #000;
+      width: 100%;
+      padding: 10px;
+      font-weight: 600;
+      border-radius: 5px;
+    }
+
+    .testimonial-card {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+      .testimonial-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+      }
+      .quote-icon {
+        width: 60px;
+        height: 60px;
+        top: 0;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 10px rgba(255,193,7,0.5);
+      }
+
+      .bg-warning-gradient {background: linear-gradient(90deg, #ffcb05 24.51%, #d18512 100%);
+      }
+      .bg-dark-gradient {background: linear-gradient(180deg, #190000 0, #000 100%);}
+
+
+      .modal-content {
+  background: #160000 !important;
+  color: #ffffff;
+  border-radius: 1rem;
+  padding:20px;
+}
+
+.form-control, .form-select, .input-group-text {
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.input-group-text {
+  background-color: #444;
+  color: #fff;
+}
+
+.btn-consult,
+.btn.btn-light {
+  background: #ffd700;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.btn-consult:hover,
+.btn.btn-light:hover {
+  background: #e6c200;
+}
+
+   
+    @media(max-width: 767px){
+      .hero { text-align: center; }
+      .display-5 {
+    font-size: 2.5em !important;
+}
+    }
