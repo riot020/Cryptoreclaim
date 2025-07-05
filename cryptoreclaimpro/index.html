@@ -592,7 +592,7 @@
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
-    // Format the message from all form fields
+    // Create a nicely formatted message
     const message = `
 Name: ${data.firstName} ${data.lastName}
 Phone: ${data.phone}
@@ -608,20 +608,26 @@ Message: ${data.message}
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: `${data.firstName} ${data.lastName}`,
+          firstName: data.firstName,
+          lastName: data.lastName,
+          phone: data.phone,
+          altPhone: data.altPhone,
           email: data.email,
-          message,
+          scamType: data.scamType,
+          investment: data.investment,
+          message: data.message,
         }),
       });
 
-      // ✅ Redirect after successful submit
-      window.location.href = "index.html"; // or "/" if needed
+      // ✅ Redirect to home page after successful submit
+      window.location.href = "index.html"; // or "/" depending on your setup
     } catch (err) {
-      console.error("Form submission failed:", err);
-      window.location.href = "index.html"; // fallback on error too
+      console.error("Failed to send form:", err);
+      window.location.href = "index.html"; // redirect anyway or customize
     }
   });
 </script>
+
 
 
 
