@@ -3,6 +3,8 @@ import nodemailer from "nodemailer";
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).end("Method Not Allowed");
 
+  console.log("Incoming request:", req.body);
+
   const {
     firstName,
     lastName,
@@ -15,7 +17,6 @@ export default async function handler(req, res) {
   } = req.body;
 
   const fullName = `${firstName} ${lastName}`;
-
   const formattedMessage = `
 New Case Submission:
 
@@ -35,14 +36,14 @@ ${message}
     port: 465,
     secure: true,
     auth: {
-      user: "bebito0923@gmail.com",
-      pass: "loszhsmnmxuwnfaj",
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
   const mailOptions = {
     from: `"${fullName}" <${email}>`,
-    to: "bebito0923@gmail.com", // You receive the message
+    to: process.env.EMAIL_USER,
     subject: "New Scam Case Submission",
     text: formattedMessage,
   };
@@ -52,7 +53,7 @@ ${message}
     console.log("Email sent:", info.messageId);
     res.status(200).send("Email sent successfully!");
   } catch (error) {
-    console.error("Email sending failed:", error);
+    console.error("Email error:", error);
     res.status(500).send("Failed to send email.");
   }
 }
