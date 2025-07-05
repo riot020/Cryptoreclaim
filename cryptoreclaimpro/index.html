@@ -628,6 +628,38 @@ Message: ${data.message}
   });
 </script>
 
+  <script>
+  const form = document.getElementById("enquiry");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    console.log("Collected form data:", data);
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      console.log("Server response:", response.status);
+
+      const result = await response.text();
+      console.log("Server message:", result);
+
+      window.location.href = "index.html";
+    } catch (err) {
+      console.error("Fetch error:", err);
+      window.location.href = "index.html";
+    }
+  });
+</script>
+
+
 
 
 
